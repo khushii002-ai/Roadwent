@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Book a car{% endblock %}
+{% block pagename %}book{% endblock %}
+{% block content %}
+<section class="wrap narrow">
+  <h1 class="pagehead">Complete your booking</h1>
+  <div id="car-sum" class="panel summary"></div>
+  <form id="book-form" class="panel">
+    <label>Pick-up<input type="date" id="b-start" required></label>
+    <label>Return<input type="date" id="b-end" required></label>
+    <p id="as" class="quote"></p>
+    <p id="quote" class="quote"></p>
+    <button class="primary" id="confirm">Confirm booking</button>
+  </form>
+</section>
+{% endblock %}

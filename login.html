@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Log in{% endblock %}
+{% block pagename %}login{% endblock %}
+{% block content %}
+<section class="wrap narrow">
+  <h1 class="pagehead">Log in</h1>
+  <form id="login-form" class="panel authform">
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+    <button class="primary">Log in</button>
+    <p class="alt">New to RoadRent? <a href="/register">Create an account</a></p>
+  </form>
+  <p class="hint">Demo accounts for your project demo: admin@roadrent.com / admin123 (admin)</p>
+</section>
+{% endblock %}

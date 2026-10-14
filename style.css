@@ -1,0 +1,66 @@
+:root{--bg:#f6f5f1;--ink:#23262b;--mute:#6a6e75;--road:#23262b;--sign:#f2b705;--line:#dedbd2;--ok:#237a4b;--bad:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Trebuchet MS","Segoe UI",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1}
+h1,h2{font-family:"Arial Black","Segoe UI",sans-serif;letter-spacing:-.02em;margin:0}
+h2{font-size:1.2rem;margin:2rem 0 .8rem}
+a{color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 1.25rem}.narrow{max-width:720px}
+.topbar{background:var(--road);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:.8rem}
+.brand{font:900 1.25rem "Arial Black",sans-serif;color:var(--sign);text-decoration:none}
+.topbar nav{display:flex;gap:.25rem;flex-wrap:wrap}
+.topbar nav a{text-decoration:none;padding:.35rem .8rem;border-radius:6px;color:#d6d8dc}
+.topbar nav a:hover{background:#3a3e45}
+.topbar nav a[aria-current=page]{background:var(--sign);color:var(--road);font-weight:700}
+.auth{display:flex;gap:.4rem;align-items:center;color:#d6d8dc;font-size:.95rem}.auth a{text-decoration:none;padding:.35rem .8rem;border-radius:6px}.auth a:hover{background:#3a3e45}.auth a[aria-current=page]{background:var(--sign);color:var(--road)}.auth .signup{background:var(--sign);color:var(--road);font-weight:700}.auth span{margin-right:.4rem}
+footer{background:var(--road);color:#aeb1b7;padding:1rem 0;font-size:.85rem;margin-top:3rem}
+.hero{background:var(--road);color:#fff;padding:2.5rem 0 1.5rem;border-bottom:8px solid var(--sign)}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.05;max-width:12em;margin-bottom:1.5rem}
+.search{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;background:#fff;color:var(--ink);padding:1rem;border-radius:10px;align-items:end}
+.panel-search{margin:1rem 0 1.5rem;border:1px solid var(--line)}
+.note{color:#c9ccd1;font-size:.9rem;margin:.75rem 0 0}
+.pagehead{font-size:clamp(1.5rem,4vw,2.1rem);margin:1.75rem 0 1rem}
+label{display:flex;flex-direction:column;font-size:.8rem;font-weight:700;color:var(--mute);gap:.25rem}
+input,select{padding:.6rem;border:1px solid #c9c5ba;border-radius:6px;font:inherit;background:#fff;color:var(--ink)}
+:focus-visible{outline:3px solid var(--sign);outline-offset:2px}
+.stats{display:flex;flex-wrap:wrap;gap:2rem;padding:1.25rem 0}
+.stats b{display:block;font:900 1.8rem "Arial Black",sans-serif}
+.stats span{color:var(--mute);font-size:.85rem}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;counter-reset:s}
+.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;color:var(--mute)}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:1.8rem;height:1.8rem;background:var(--sign);color:var(--road);border-radius:50%;font-weight:800;margin-bottom:.4rem}
+.steps strong{display:block;color:var(--ink);font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.car{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.car.off{opacity:.55}
+.pic{height:90px;background:var(--road);display:grid;place-items:center;font-size:2.6rem}
+.car .body{padding:.9rem 1rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.car h3{margin:0;font-size:1.1rem}
+.spec{color:var(--mute);font-size:.88rem}
+.price{font:900 1.35rem "Arial Black",sans-serif}.price small{font:400 .8rem "Trebuchet MS",sans-serif;color:var(--mute)}
+.tag{font-size:.78rem;padding:.1rem .55rem;border-radius:99px;background:#e1f1e8;color:var(--ok);align-self:flex-start;white-space:nowrap}
+.tag.no{background:#f7dcda;color:var(--bad)}
+.primary{display:inline-block;background:var(--sign);color:var(--road);border:0;border-radius:6px;padding:.7rem 1.1rem;font:800 1rem inherit;cursor:pointer;text-decoration:none;text-align:center}
+.primary[aria-disabled=true],.primary:disabled{background:#d9d6cc;pointer-events:none;cursor:not-allowed}
+.small,.small-link{background:#fff;border:1px solid var(--line);border-radius:6px;padding:.35rem .7rem;cursor:pointer;font:inherit;font-size:.85rem;text-decoration:none;display:inline-block}
+.panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;background:#fff;border:1px solid var(--line);padding:1.1rem;border-radius:10px;margin:0 0 1.25rem}
+.panel.inline{grid-template-columns:minmax(200px,320px) auto;align-items:end}
+.summary{grid-template-columns:1fr;gap:.2rem}
+.quote{grid-column:1/-1;margin:0;font-weight:700}
+.list{display:grid;gap:.6rem;margin-bottom:1.5rem}
+.row-card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--sign);border-radius:8px;padding:.8rem 1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.row-card.cancelled{border-left-color:var(--line);opacity:.6}
+.row-card .info{flex:1;min-width:200px}.row-card small{display:block;color:var(--mute)}
+.empty{color:var(--mute);padding:2rem;text-align:center;border:1px dashed var(--line);border-radius:8px}
+.subnav{display:flex;gap:.5rem;margin-top:1.25rem}.subnav a{padding:.3rem .8rem;border:1px solid var(--line);border-radius:6px;text-decoration:none;background:#fff}
+.subnav a[aria-current=page]{background:var(--road);color:#fff}
+.ticket{background:#fff;border:2px dashed var(--ink);border-radius:12px;padding:1.5rem;margin-top:1.5rem}
+.ticket .ref{font:900 2.2rem "Arial Black",sans-serif;color:var(--ok)}
+.ticket dl{display:grid;grid-template-columns:max-content 1fr;gap:.3rem 1.2rem;margin:1rem 0}.ticket dt{color:var(--mute)}.ticket dd{margin:0;font-weight:700}
+.prose ul{padding-left:1.2rem}
+#toast{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:.7rem 1.2rem;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;z-index:9}
+#toast.show{opacity:1}#toast.err{background:var(--bad)}
+@media print{.topbar,footer,.noprint{display:none!important}}
+
+.authform{grid-template-columns:1fr}.authform .alt{margin:0;color:var(--mute);font-size:.9rem}.hint{color:var(--mute);font-size:.85rem}

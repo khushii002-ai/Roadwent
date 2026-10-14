@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Sign up{% endblock %}
+{% block pagename %}register{% endblock %}
+{% block content %}
+<section class="wrap narrow">
+  <h1 class="pagehead">Create your account</h1>
+  <form id="register-form" class="panel authform">
+    <label>Full name<input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Mobile number<input name="phone" inputmode="numeric" maxlength="10" required autocomplete="tel"></label>
+    <label>Password (6 or more characters)<input name="password" type="password" minlength="6" required autocomplete="new-password"></label>
+    <label>Confirm password<input name="confirm" type="password" required autocomplete="new-password"></label>
+    <button class="primary">Create account</button>
+    <p class="alt">Already registered? <a href="/login">Log in</a></p>
+  </form>
+</section>
+{% endblock %}

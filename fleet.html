@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Admin fleet{% endblock %}
+{% block pagename %}fleet{% endblock %}
+{% block content %}
+<section class="wrap">
+  <div class="subnav"><a href="/admin">Bookings</a><a href="/admin/fleet" aria-current="page">Fleet</a><a href="/logout">Log out</a></div>
+  <h1 class="pagehead">Manage fleet</h1>
+  <form id="car-form" class="panel">
+    <label>Name<input name="name" required></label>
+    <label>Type<select name="type"><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Van</option></select></label>
+    <label>Seats<input name="seats" type="number" min="2" max="20" value="5"></label>
+    <label>Transmission<select name="transmission"><option>Manual</option><option>Automatic</option></select></label>
+    <label>Fuel<select name="fuel"><option>Petrol</option><option>Diesel</option><option>Electric</option><option>CNG</option></select></label>
+    <label>Price per day (Rs)<input name="price_per_day" type="number" min="500" required></label>
+    <button class="primary">Add car</button>
+  </form>
+  <div class="list" id="fleet-list"></div>
+</section>
+{% endblock %}

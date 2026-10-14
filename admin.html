@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Admin bookings{% endblock %}
+{% block pagename %}admin{% endblock %}
+{% block content %}
+<section class="wrap">
+  <div class="subnav"><a href="/admin" aria-current="page">Bookings</a><a href="/admin/fleet">Fleet</a><a href="/logout">Log out</a></div>
+  <h1 class="pagehead">Bookings dashboard</h1>
+  <div class="stats" id="stats"></div>
+  <div class="list" id="admin-list"></div>
+</section>
+{% endblock %}

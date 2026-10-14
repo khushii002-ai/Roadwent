@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}RoadRent{% endblock %} | RoadRent</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap bar">
+  <a class="brand" href="/">RoadRent</a>
+  <nav>
+    <a href="/" {% if page=='home' %}aria-current="page"{% endif %}>Home</a>
+    <a href="/cars" {% if page=='cars' %}aria-current="page"{% endif %}>Cars</a>
+    <a href="/my-bookings" {% if page=='mine' %}aria-current="page"{% endif %}>My bookings</a>
+    <a href="/about" {% if page=='about' %}aria-current="page"{% endif %}>About</a>
+  </nav>
+  <div class="auth" id="auth">
+    {% if user %}<span>Hi, {{ user['name'].split(' ')[0] }}</span>
+      {% if user['role']=='admin' %}<a href="/admin" {% if page=='admin' %}aria-current="page"{% endif %}>Admin</a>{% endif %}
+      <a href="/logout">Log out</a>
+    {% else %}<a href="/login" {% if page=='login' %}aria-current="page"{% endif %}>Log in</a><a class="signup" href="/register">Sign up</a>{% endif %}
+  </div>
+</div></header>
+<main data-page="{% block pagename %}{% endblock %}">
+{% block content %}{% endblock %}
+</main>
+<footer><div class="wrap">RoadRent &middot; MCA Second Year Project &middot; Flask + SQLite</div></footer>
+<div id="toast" role="status"></div>
+<script src="/assets/app.js"></script>
+</body>
+</html>

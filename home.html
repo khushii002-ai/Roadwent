@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Self-drive car rental{% endblock %}
+{% block pagename %}home{% endblock %}
+{% block content %}
+<div class="hero"><div class="wrap">
+  <h1>Pick your dates. Get the keys.</h1>
+  <form id="quick" class="search">
+    <label>Pick-up<input type="date" id="q-start" required></label>
+    <label>Return<input type="date" id="q-end" required></label>
+    <label>Car type<select id="q-type"><option value="">Any</option><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Van</option></select></label>
+    <button class="primary">Search cars</button>
+  </form>
+  <p class="note">Rent 3+ days and save 5%. Rent 7+ days and save 10%.</p>
+</div></div>
+<section class="wrap">
+  <div class="stats" id="stats"></div>
+  <h2>How renting works</h2>
+  <ol class="steps">
+    <li><strong>Search</strong>Choose your dates and see only the cars that are free.</li>
+    <li><strong>Book</strong>Enter your name and mobile number. The price is fixed upfront.</li>
+    <li><strong>Drive</strong>Show your booking reference and driving licence at pick-up.</li>
+  </ol>
+  <h2>Popular right now</h2>
+  <div class="grid" id="featured"></div>
+  <p><a class="small-link" href="/cars">See all cars</a></p>
+</section>
+{% endblock %}
